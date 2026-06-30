@@ -25,7 +25,7 @@ const socials = [
   { icon: Phone, label: "WhatsApp", href: `https://wa.me/${profile.whatsapp}` },
 ];
 
-export function Contact() {
+export function Contact () {
   const [errors, setErrors] = useState<Record<string, string>>({});
 
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -37,7 +37,8 @@ export function Contact() {
       message: String(form.get("message") ?? ""),
     };
     const result = schema.safeParse(data);
-    if (!result.success) {
+    if (!result.success)
+    {
       const fieldErrors: Record<string, string> = {};
       result.error.issues.forEach((i) => {
         fieldErrors[i.path[0] as string] = i.message;
@@ -59,7 +60,7 @@ export function Contact() {
     <section id="contact" className="mx-auto max-w-6xl px-5 py-24">
       <SectionHeading
         eyebrow="Contact"
-        title="Let's build something together"
+        title="Siap Berkolaborasi"
         subtitle="Tertarik berkolaborasi atau punya pertanyaan? Kirim pesan langsung di bawah ini."
       />
 
