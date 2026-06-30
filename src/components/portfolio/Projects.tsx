@@ -128,7 +128,7 @@ export function Projects() {
       <div className="mx-auto max-w-6xl px-5 py-24">
         <SectionHeading
           eyebrow="Portfolio"
-          title="Featured Projects"
+          title="Proyek Saat ini"
           subtitle="Beberapa proyek pilihan di bidang IoT, robotika, dan web development."
         />
 

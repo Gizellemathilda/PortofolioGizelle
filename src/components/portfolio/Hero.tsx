@@ -33,7 +33,7 @@ export function Hero () {
             className="mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-4 py-1.5 text-xs font-medium text-muted-foreground backdrop-blur"
           >
             <span className="h-2 w-2 rounded-full bg-primary shadow-glow" />
-            Available for collaboration & internships
+            Terbuka untuk Kesempatan Kolaborasi & Magang
           </motion.div>
 
           <motion.h1

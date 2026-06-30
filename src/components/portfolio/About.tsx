@@ -9,7 +9,7 @@ export function About() {
     <section id="about" className="mx-auto max-w-6xl px-5 py-24">
       <SectionHeading
         eyebrow="About Me"
-        title="Driven by curiosity for technology"
+        title="Berawal dari rasa ingin tahu tentang teknologi."
         subtitle={profile.tagline}
       />
 

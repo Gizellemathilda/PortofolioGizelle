@@ -1,12 +1,12 @@
 import { skillGroups } from "@/lib/portfolio-data";
 import { Reveal, SectionHeading } from "./Reveal";
 
-export function Skills() {
+export function Skills () {
   return (
     <section id="skills" className="mx-auto max-w-6xl px-5 py-24">
       <SectionHeading
         eyebrow="Skills"
-        title="Tools & technologies I work with"
+        title="Tools & Teknologi yang Saya Gunakan"
         subtitle="Kombinasi keterampilan pengembangan web, IoT, dan rekayasa perangkat lunak."
       />
 

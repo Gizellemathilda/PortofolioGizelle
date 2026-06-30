@@ -2,13 +2,13 @@ import { GraduationCap, Award, Briefcase, Download } from "lucide-react";
 import { education, achievements, experiences } from "@/lib/portfolio-data";
 import { Reveal, SectionHeading } from "./Reveal";
 
-export function Resume() {
+export function Resume () {
   return (
     <section id="resume" className="border-y border-border bg-secondary/40">
       <div className="mx-auto max-w-6xl px-5 py-24">
         <SectionHeading
           eyebrow="Curriculum Vitae"
-          title="Education, achievements & experience"
+          title="Pendidikan, Prestasi dan Pengalaman"
           subtitle="Rangkuman perjalanan akademik, prestasi, dan pengalaman organisasi."
         />
 
@@ -16,7 +16,7 @@ export function Resume() {
           <div className="space-y-8">
             <Reveal>
               <h3 className="mb-4 flex items-center gap-2 text-lg font-semibold">
-                <GraduationCap className="h-5 w-5 text-primary" /> Education
+                <GraduationCap className="h-5 w-5 text-primary" /> Pendidikan
               </h3>
               {education.map((e) => (
                 <div key={e.school} className="rounded-xl border border-border bg-card p-5 shadow-sm">
@@ -35,7 +35,7 @@ export function Resume() {
 
             <Reveal delay={0.1}>
               <h3 className="mb-4 flex items-center gap-2 text-lg font-semibold">
-                <Award className="h-5 w-5 text-primary" /> Achievement
+                <Award className="h-5 w-5 text-primary" /> Prestasi
               </h3>
               {achievements.map((a) => (
                 <div
@@ -67,7 +67,7 @@ export function Resume() {
 
           <Reveal delay={0.1}>
             <h3 className="mb-4 flex items-center gap-2 text-lg font-semibold">
-              <Briefcase className="h-5 w-5 text-primary" /> Experience
+              <Briefcase className="h-5 w-5 text-primary" /> Pengalaman
             </h3>
             <div className="relative space-y-6 border-l border-border pl-6">
               {experiences.map((exp) => (
