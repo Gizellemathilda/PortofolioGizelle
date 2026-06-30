@@ -156,7 +156,7 @@ export const projects = [
       "Sistem Informasi Manajemen Laboratorium untuk Rumpun Informatika UNESA. Mendukung role-based authentication (admin, dosen, aslab, asprak), manajemen inventaris, peminjaman alat, pelaporan kerusakan, notifikasi, absensi, dan penilaian praktikum.",
     tech: ["Laravel 10", "PHP 8.2", "Sanctum", "MySQL 8.0", "Vue.js 3", "Vite"],
     github: "https://github.com/Gizellemathilda/Sistem-Manajemen-Laboratorium-Rumpun-Informatika-UNESA.git",
-    demo: "#",
+    demo: "https://sistem-manajemen-laboratorium-rumpu.vercel.app/",
   },
   {
     title: "Rescue Watch",
