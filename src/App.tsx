@@ -210,12 +210,13 @@ const contacts = [
   },
 ]
 
-function useScrollReveal() {
+function useScrollReveal () {
   useEffect(() => {
     const elements = Array.from(document.querySelectorAll<HTMLElement>('.reveal-item'))
     if (elements.length === 0) return
 
-    if (typeof IntersectionObserver === 'undefined') {
+    if (typeof IntersectionObserver === 'undefined')
+    {
       elements.forEach((element) => element.classList.add('is-visible'))
       return
     }
@@ -223,7 +224,8 @@ function useScrollReveal() {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
+          if (entry.isIntersecting)
+          {
             entry.target.classList.add('is-visible')
             observer.unobserve(entry.target)
           }
@@ -237,7 +239,7 @@ function useScrollReveal() {
   }, [])
 }
 
-function App() {
+function App () {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const [showTop, setShowTop] = useState(false)
@@ -294,11 +296,10 @@ function App() {
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div
-            className={`flex items-center justify-between rounded-full border px-4 py-2.5 transition-all duration-300 sm:px-5 ${
-              scrolled
-                ? 'border-blush-200/80 bg-white/90 shadow-[0_16px_40px_-32px_rgba(157,27,78,0.5)] backdrop-blur-xl'
-                : 'border-white/70 bg-white/55 backdrop-blur-md'
-            }`}
+            className={`flex items-center justify-between rounded-full border px-4 py-2.5 transition-all duration-300 sm:px-5 ${scrolled
+              ? 'border-blush-200/80 bg-white/90 shadow-[0_16px_40px_-32px_rgba(157,27,78,0.5)] backdrop-blur-xl'
+              : 'border-white/70 bg-white/55 backdrop-blur-md'
+              }`}
           >
             <a href="#beranda" className="group flex items-center gap-3">
               <span className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-blush-400 to-blush-600 font-serif text-lg italic text-white shadow-[0_8px_20px_-10px_rgba(226,62,114,0.9)]">
@@ -319,17 +320,15 @@ function App() {
                 <a
                   key={item.id}
                   href={`#${item.id}`}
-                  className={`relative rounded-full px-3 py-2 text-[13px] font-medium transition-colors xl:px-4 xl:text-sm ${
-                    activeSection === item.id
-                      ? 'text-blush-700'
-                      : 'text-plum-700/75 hover:text-blush-700'
-                  }`}
+                  className={`relative rounded-full px-3 py-2 text-[13px] font-medium transition-colors xl:px-4 xl:text-sm ${activeSection === item.id
+                    ? 'text-blush-700'
+                    : 'text-plum-700/75 hover:text-blush-700'
+                    }`}
                 >
                   {item.label}
                   <span
-                    className={`absolute inset-x-3 -bottom-0.5 h-0.5 rounded-full bg-blush-500 transition-opacity xl:inset-x-4 ${
-                      activeSection === item.id ? 'opacity-100' : 'opacity-0'
-                    }`}
+                    className={`absolute inset-x-3 -bottom-0.5 h-0.5 rounded-full bg-blush-500 transition-opacity xl:inset-x-4 ${activeSection === item.id ? 'opacity-100' : 'opacity-0'
+                      }`}
                   />
                 </a>
               ))}
@@ -359,9 +358,8 @@ function App() {
 
           <div
             id="menu-mobile"
-            className={`overflow-hidden transition-all duration-300 lg:hidden ${
-              isMenuOpen ? 'mt-2 max-h-[32rem] opacity-100' : 'max-h-0 opacity-0'
-            }`}
+            className={`overflow-hidden transition-all duration-300 lg:hidden ${isMenuOpen ? 'mt-2 max-h-[32rem] opacity-100' : 'max-h-0 opacity-0'
+              }`}
           >
             <nav
               aria-label="Navigasi mobile"
@@ -1187,9 +1185,8 @@ function App() {
       <a
         href="#beranda"
         aria-label="Kembali ke atas"
-        className={`fixed bottom-5 right-5 z-40 flex h-11 w-11 items-center justify-center rounded-full border border-blush-200 bg-white/90 text-blush-700 shadow-soft backdrop-blur transition-all duration-300 hover:bg-blush-50 sm:bottom-7 sm:right-7 ${
-          showTop ? 'translate-y-0 opacity-100' : 'pointer-events-none translate-y-4 opacity-0'
-        }`}
+        className={`fixed bottom-5 right-5 z-40 flex h-11 w-11 items-center justify-center rounded-full border border-blush-200 bg-white/90 text-blush-700 shadow-soft backdrop-blur transition-all duration-300 hover:bg-blush-50 sm:bottom-7 sm:right-7 ${showTop ? 'translate-y-0 opacity-100' : 'pointer-events-none translate-y-4 opacity-0'
+          }`}
       >
         <ArrowUp className="h-4 w-4" />
       </a>
@@ -1197,7 +1194,7 @@ function App() {
   )
 }
 
-function SectionHeading({
+function SectionHeading ({
   eyebrow,
   title,
   description,
@@ -1226,7 +1223,7 @@ function SectionHeading({
   )
 }
 
-function StrengthCard({
+function StrengthCard ({
   icon,
   title,
   text,
@@ -1251,7 +1248,7 @@ function StrengthCard({
   )
 }
 
-function ProfileRow({ label, value }: { label: string; value: string }) {
+function ProfileRow ({ label, value }: { label: string; value: string }) {
   return (
     <div className="flex items-start justify-between gap-4 border-b border-blush-100/80 pb-3 last:border-0 last:pb-0">
       <dt className="shrink-0 text-xs text-plum-400">{label}</dt>
@@ -1260,7 +1257,7 @@ function ProfileRow({ label, value }: { label: string; value: string }) {
   )
 }
 
-function ExperienceCard({ experience, index }: { experience: Experience; index: number }) {
+function ExperienceCard ({ experience, index }: { experience: Experience; index: number }) {
   return (
     <div
       className="reveal-item relative grid grid-cols-[2.3rem_1fr] gap-3 sm:grid-cols-[2.8rem_1fr] sm:gap-5"
@@ -1316,7 +1313,7 @@ function ExperienceCard({ experience, index }: { experience: Experience; index: 
   )
 }
 
-function SkillCard({ skill, delay }: { skill: Skill; delay: number }) {
+function SkillCard ({ skill, delay }: { skill: Skill; delay: number }) {
   return (
     <article
       className="reveal-item group rounded-[1.6rem] border border-blush-200/60 bg-white/70 p-5 transition duration-300 hover:-translate-y-1 hover:border-blush-300 hover:bg-white hover:shadow-soft sm:p-6"
@@ -1345,7 +1342,7 @@ function SkillCard({ skill, delay }: { skill: Skill; delay: number }) {
   )
 }
 
-function SocialLink({
+function SocialLink ({
   href,
   label,
   children,
@@ -1364,11 +1361,10 @@ function SocialLink({
       rel={external ? 'noreferrer' : undefined}
       aria-label={label}
       title={label}
-      className={`flex h-9 w-9 items-center justify-center rounded-full border transition ${
-        variant === 'light'
-          ? 'border-blush-200 bg-white/70 text-plum-600 hover:border-blush-400 hover:bg-blush-50 hover:text-blush-700'
-          : 'border-white/15 bg-white/10 text-blush-100 hover:border-white/30 hover:bg-white/20 hover:text-white'
-      }`}
+      className={`flex h-9 w-9 items-center justify-center rounded-full border transition ${variant === 'light'
+        ? 'border-blush-200 bg-white/70 text-plum-600 hover:border-blush-400 hover:bg-blush-50 hover:text-blush-700'
+        : 'border-white/15 bg-white/10 text-blush-100 hover:border-white/30 hover:bg-white/20 hover:text-white'
+        }`}
     >
       {children}
     </a>
@@ -1377,7 +1373,7 @@ function SocialLink({
 
 type IconProps = { className?: string }
 
-function ArrowUpRight({ className = 'h-4 w-4' }: IconProps) {
+function ArrowUpRight ({ className = 'h-4 w-4' }: IconProps) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
       <path d="M7 17 17 7M9 7h8v8" />
@@ -1385,7 +1381,7 @@ function ArrowUpRight({ className = 'h-4 w-4' }: IconProps) {
   )
 }
 
-function ArrowUp({ className = 'h-4 w-4' }: IconProps) {
+function ArrowUp ({ className = 'h-4 w-4' }: IconProps) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
       <path d="M12 19V5m0 0-6 6m6-6 6 6" />
@@ -1393,7 +1389,7 @@ function ArrowUp({ className = 'h-4 w-4' }: IconProps) {
   )
 }
 
-function ArrowDown({ className = 'h-4 w-4' }: IconProps) {
+function ArrowDown ({ className = 'h-4 w-4' }: IconProps) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
       <path d="M12 5v14m0 0 6-6m-6 6-6-6" />
@@ -1401,7 +1397,7 @@ function ArrowDown({ className = 'h-4 w-4' }: IconProps) {
   )
 }
 
-function DownloadIcon({ className = 'h-4 w-4' }: IconProps) {
+function DownloadIcon ({ className = 'h-4 w-4' }: IconProps) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
       <path d="M12 3v12m0 0 4-4m-4 4-4-4M4 19h16" />
@@ -1409,7 +1405,7 @@ function DownloadIcon({ className = 'h-4 w-4' }: IconProps) {
   )
 }
 
-function FileIcon({ className = 'h-4 w-4' }: IconProps) {
+function FileIcon ({ className = 'h-4 w-4' }: IconProps) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
       <path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5Z" />
@@ -1418,7 +1414,7 @@ function FileIcon({ className = 'h-4 w-4' }: IconProps) {
   )
 }
 
-function MailIcon({ className = 'h-4 w-4' }: IconProps) {
+function MailIcon ({ className = 'h-4 w-4' }: IconProps) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
       <rect x="3" y="5" width="18" height="14" rx="2.5" />
@@ -1427,7 +1423,7 @@ function MailIcon({ className = 'h-4 w-4' }: IconProps) {
   )
 }
 
-function PhoneIcon({ className = 'h-4 w-4' }: IconProps) {
+function PhoneIcon ({ className = 'h-4 w-4' }: IconProps) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
       <path d="M6 3h3l1.5 4.5-2 1.5a12 12 0 0 0 5.5 5.5l1.5-2L20 16v3a2 2 0 0 1-2 2A16 16 0 0 1 4 7a2 2 0 0 1 2-2Z" />
@@ -1435,7 +1431,7 @@ function PhoneIcon({ className = 'h-4 w-4' }: IconProps) {
   )
 }
 
-function LinkedInIcon({ className = 'h-4 w-4' }: IconProps) {
+function LinkedInIcon ({ className = 'h-4 w-4' }: IconProps) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
       <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29ZM5.32 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14ZM7.1 20.45H3.54V9H7.1v11.45ZM22.23 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.21 0 22.23 0Z" />
@@ -1443,7 +1439,7 @@ function LinkedInIcon({ className = 'h-4 w-4' }: IconProps) {
   )
 }
 
-function GitHubIcon({ className = 'h-4 w-4' }: IconProps) {
+function GitHubIcon ({ className = 'h-4 w-4' }: IconProps) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
       <path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.09.68-.22.68-.49 0-.24-.01-1.04-.01-1.89-2.78.62-3.37-1.21-3.37-1.21-.45-1.18-1.11-1.49-1.11-1.49-.91-.64.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.57 2.34 1.12 2.91.86.09-.66.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05.8-.23 1.65-.34 2.5-.34.85 0 1.7.11 2.5.34 1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.58.69.48A10.25 10.25 0 0 0 22 12.25C22 6.58 17.52 2 12 2Z" />
@@ -1451,7 +1447,7 @@ function GitHubIcon({ className = 'h-4 w-4' }: IconProps) {
   )
 }
 
-function MenuIcon({ className = 'h-5 w-5' }: IconProps) {
+function MenuIcon ({ className = 'h-5 w-5' }: IconProps) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
       <path d="M4 7h16M4 12h16M4 17h16" />
@@ -1459,7 +1455,7 @@ function MenuIcon({ className = 'h-5 w-5' }: IconProps) {
   )
 }
 
-function CloseIcon({ className = 'h-5 w-5' }: IconProps) {
+function CloseIcon ({ className = 'h-5 w-5' }: IconProps) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
       <path d="m6 6 12 12M18 6 6 18" />
@@ -1467,7 +1463,7 @@ function CloseIcon({ className = 'h-5 w-5' }: IconProps) {
   )
 }
 
-function SparkleIcon({ className = 'h-4 w-4' }: IconProps) {
+function SparkleIcon ({ className = 'h-4 w-4' }: IconProps) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
       <path d="M12 3l1.8 4.8L18.6 9.6l-4.8 1.8L12 16.2l-1.8-4.8L5.4 9.6l4.8-1.8L12 3Z" />
@@ -1476,7 +1472,7 @@ function SparkleIcon({ className = 'h-4 w-4' }: IconProps) {
   )
 }
 
-function ChipIcon({ className = 'h-4 w-4' }: IconProps) {
+function ChipIcon ({ className = 'h-4 w-4' }: IconProps) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.7} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
       <rect x="6" y="6" width="12" height="12" rx="2.5" />
@@ -1486,7 +1482,7 @@ function ChipIcon({ className = 'h-4 w-4' }: IconProps) {
   )
 }
 
-function CodeIcon({ className = 'h-5 w-5' }: IconProps) {
+function CodeIcon ({ className = 'h-5 w-5' }: IconProps) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.7} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
       <path d="m9 18-6-6 6-6M15 6l6 6-6 6" />
@@ -1494,7 +1490,7 @@ function CodeIcon({ className = 'h-5 w-5' }: IconProps) {
   )
 }
 
-function LayoutIcon({ className = 'h-5 w-5' }: IconProps) {
+function LayoutIcon ({ className = 'h-5 w-5' }: IconProps) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.7} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
       <rect x="3" y="4" width="18" height="16" rx="2.5" />
@@ -1503,7 +1499,7 @@ function LayoutIcon({ className = 'h-5 w-5' }: IconProps) {
   )
 }
 
-function DatabaseIcon({ className = 'h-5 w-5' }: IconProps) {
+function DatabaseIcon ({ className = 'h-5 w-5' }: IconProps) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.7} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
       <ellipse cx="12" cy="5.5" rx="7.5" ry="3" />
@@ -1512,7 +1508,7 @@ function DatabaseIcon({ className = 'h-5 w-5' }: IconProps) {
   )
 }
 
-function PenIcon({ className = 'h-5 w-5' }: IconProps) {
+function PenIcon ({ className = 'h-5 w-5' }: IconProps) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.7} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
       <path d="m12 19 7-7a2.8 2.8 0 0 0-4-4l-7 7-1.5 5.5L12 19Z" />
@@ -1521,7 +1517,7 @@ function PenIcon({ className = 'h-5 w-5' }: IconProps) {
   )
 }
 
-function WrenchIcon({ className = 'h-5 w-5' }: IconProps) {
+function WrenchIcon ({ className = 'h-5 w-5' }: IconProps) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.7} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
       <path d="M14.5 6.5a4.5 4.5 0 0 0 5.7 5.7L21 21l-2 1-8.8-8.2a4.5 4.5 0 1 1-1.7-1.7L21 3l1 2-7.5 1.5Z" />
@@ -1529,7 +1525,7 @@ function WrenchIcon({ className = 'h-5 w-5' }: IconProps) {
   )
 }
 
-function TrophyIcon({ className = 'h-4 w-4' }: IconProps) {
+function TrophyIcon ({ className = 'h-4 w-4' }: IconProps) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.7} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
       <path d="M8 4h8v5a4 4 0 0 1-8 0V4Z" />
@@ -1538,7 +1534,7 @@ function TrophyIcon({ className = 'h-4 w-4' }: IconProps) {
   )
 }
 
-function GraduationIcon({ className = 'h-5 w-5' }: IconProps) {
+function GraduationIcon ({ className = 'h-5 w-5' }: IconProps) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.7} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
       <path d="m3 9 9-5 9 5-9 5-9-5Z" />
@@ -1547,7 +1543,7 @@ function GraduationIcon({ className = 'h-5 w-5' }: IconProps) {
   )
 }
 
-function BriefcaseIcon({ className = 'h-4 w-4' }: IconProps) {
+function BriefcaseIcon ({ className = 'h-4 w-4' }: IconProps) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.7} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
       <rect x="3" y="7" width="18" height="13" rx="2.5" />
@@ -1556,7 +1552,7 @@ function BriefcaseIcon({ className = 'h-4 w-4' }: IconProps) {
   )
 }
 
-function UsersIcon({ className = 'h-4 w-4' }: IconProps) {
+function UsersIcon ({ className = 'h-4 w-4' }: IconProps) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.7} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
       <circle cx="9" cy="8" r="3.2" />
@@ -1565,7 +1561,7 @@ function UsersIcon({ className = 'h-4 w-4' }: IconProps) {
   )
 }
 
-function CheckIcon({ className = 'h-3 w-3' }: IconProps) {
+function CheckIcon ({ className = 'h-3 w-3' }: IconProps) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={3} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
       <path d="m5 13 4 4L19 7" />
