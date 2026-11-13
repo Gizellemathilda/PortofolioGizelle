@@ -134,30 +134,48 @@ const skills: Skill[] = [
   },
 ]
 
-const highlights = [
+const projectShowcase = [
   {
-    number: '01',
-    title: 'RESCUE WATCH',
-    detail: 'Rapid Emergency Seismic Command Unit Essential',
-    meta: 'Silver Medal · IYSA',
+    title: 'StyleSync',
+    tag: 'Web App',
+    detail: 'Aplikasi web layanan fashion dan penjahitan dengan antarmuka responsif.',
+    meta: 'Layanan Fashion & Penjahitan',
+    image: '/images/project-stylesync.webp',
   },
   {
-    number: '02',
     title: 'Lapangan Putro Agung',
-    detail: 'Digitalisasi manajemen lapangan olahraga berbasis website',
-    meta: 'PKM Abdimas · 2026',
+    tag: 'PKM Abdimas',
+    detail: 'Digitalisasi manajemen lapangan olahraga Putro Agung di Kelurahan Rangkah, Surabaya.',
+    meta: 'Booking & Manajemen Lapangan',
+    image: '/images/project-putro-agung.webp',
   },
   {
-    number: '03',
-    title: 'Deteksi Emosi MLP',
-    detail: 'Perbandingan 3 model klasifikasi emosi',
-    meta: 'Magang Riset · 2026',
+    title: 'RESCUE WATCH',
+    tag: 'IoT · Medali Silver',
+    detail: 'Sistem pemantauan data seismik dan kondisi server untuk peringatan dini gempa.',
+    meta: 'Monitoring Seismik & Peringatan Dini',
+    image: '/images/project-rescue-watch.webp',
   },
   {
-    number: '04',
+    title: 'SIM-LAB',
+    tag: 'Sistem Informasi',
+    detail:
+      'Sistem Informasi Manajemen Laboratorium Rumpun Informatika UNESA dengan hak akses multi-peran.',
+    meta: 'Inventaris, Peminjaman & Absensi',
+    image: '/images/project-simlab.webp',
+  },
+]
+
+const otherProjects = [
+  {
+    title: 'Deteksi Emosi (MLP)',
+    detail: 'Perbandingan 3 model klasifikasi emosi berbasis Multilayer Perceptron.',
+    meta: 'Magang Riset Dosen',
+  },
+  {
     title: 'Robot Seni Tari',
-    detail: 'Algoritma kontrol gerakan robot',
-    meta: 'Dewo Robotic · 2026',
+    detail: 'Algoritma kontrol gerakan, debugging, dan optimasi performa robot.',
+    meta: 'Dewo Robotic UNESA',
   },
 ]
 
@@ -490,13 +508,15 @@ function App() {
                       <SparkleIcon className="h-5 w-5 text-blush-400" />
                     </div>
 
-                    <div className="relative mx-auto mt-7 flex h-36 w-36 items-center justify-center">
+                    <div className="relative mx-auto mt-7 flex h-40 w-40 items-center justify-center">
                       <span className="absolute inset-0 rounded-full border border-dashed border-blush-300/80" />
-                      <span className="absolute inset-2 rounded-full bg-white/50 backdrop-blur-sm" />
-                      <span className="relative flex h-28 w-28 items-center justify-center rounded-full bg-gradient-to-br from-blush-400 via-blush-500 to-blush-700 font-serif text-5xl italic text-white shadow-[0_20px_40px_-18px_rgba(192,42,92,0.8)]">
-                        G
-                      </span>
-                      <span className="absolute -right-1 top-1 flex h-8 w-8 items-center justify-center rounded-full border border-white bg-cream-50 text-blush-500 shadow-sm">
+                      <span className="absolute inset-1 rounded-full bg-white/60 backdrop-blur-sm" />
+                      <img
+                        src="/images/foto-gizelle.jpg"
+                        alt="Foto Gizelle Mathilda Mamentu"
+                        className="relative h-32 w-32 rounded-full object-cover ring-4 ring-white shadow-[0_20px_40px_-18px_rgba(192,42,92,0.7)]"
+                      />
+                      <span className="absolute -right-1 top-2 flex h-8 w-8 items-center justify-center rounded-full border border-white bg-cream-50 text-blush-500 shadow-sm">
                         <SparkleIcon className="h-4 w-4" />
                       </span>
                     </div>
@@ -636,9 +656,11 @@ function App() {
                   <div className="relative">
                     <div className="flex items-center justify-between gap-4">
                       <div className="flex items-center gap-3">
-                        <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-blush-400 to-blush-600 font-serif text-lg italic text-white">
-                          G
-                        </span>
+                        <img
+                          src="/images/foto-gizelle.jpg"
+                          alt="Foto Gizelle Mathilda Mamentu"
+                          className="h-11 w-11 rounded-2xl object-cover ring-2 ring-blush-100"
+                        />
                         <div>
                           <p className="text-sm font-semibold text-plum-900">Profil singkat</p>
                           <p className="text-xs text-plum-500">Informasi dasar</p>
@@ -761,17 +783,17 @@ function App() {
         <section id="prestasi" className="py-10 sm:py-14">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <SectionHeading
-              eyebrow="04 — Prestasi"
+              eyebrow="04 — Prestasi & Proyek"
               title={
                 <>
-                  Momen yang <span className="text-gradient-pink italic">berarti</span>
+                  Medali &amp; <span className="text-gradient-pink italic">Karya Proyek</span>
                 </>
               }
-              description="Satu medali internasional, dan proyek-proyek yang menjadi ruang belajar paling berharga."
+              description="Satu medali internasional, plus kumpulan proyek web dan IoT yang menjadi ruang belajar paling berharga."
             />
 
-            <div className="mt-10 grid gap-5 lg:grid-cols-[1.02fr_0.98fr]">
-              <article className="reveal-item relative overflow-hidden rounded-[2rem] bg-plum-900 p-7 text-white shadow-soft sm:p-9">
+            <div className="mt-10 grid items-start gap-5 lg:grid-cols-[0.88fr_1.12fr]">
+              <article className="reveal-item relative overflow-hidden rounded-[2rem] bg-plum-900 p-7 text-white shadow-soft sm:p-9 lg:sticky lg:top-28">
                 <div
                   aria-hidden="true"
                   className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-blush-500/25 blur-3xl"
@@ -828,25 +850,62 @@ function App() {
                 </div>
               </article>
 
-              <div className="reveal-item space-y-3" style={{ transitionDelay: '120ms' }}>
+              <div className="reveal-item" style={{ transitionDelay: '120ms' }}>
                 <p className="px-1 text-[11px] font-semibold uppercase tracking-[0.22em] text-plum-400">
                   Sorotan proyek
                 </p>
-                {highlights.map((highlight) => (
-                  <div
-                    key={highlight.number}
-                    className="flex items-center gap-4 rounded-2xl border border-blush-200/70 bg-white/70 p-4 transition duration-300 hover:border-blush-300 hover:bg-white hover:shadow-lift"
-                  >
-                    <span className="font-serif text-sm italic text-blush-400">{highlight.number}</span>
-                    <div className="min-w-0 flex-1">
-                      <p className="truncate text-sm font-semibold text-plum-900">{highlight.title}</p>
-                      <p className="truncate text-xs text-plum-500">{highlight.detail}</p>
+
+                <div className="mt-3 grid gap-4 sm:grid-cols-2">
+                  {projectShowcase.map((project) => (
+                    <article
+                      key={project.title}
+                      className="group overflow-hidden rounded-[1.4rem] border border-blush-200/70 bg-white/70 transition duration-300 hover:-translate-y-1 hover:border-blush-300 hover:shadow-soft"
+                    >
+                      <div className="relative aspect-[1.9/1] overflow-hidden bg-blush-50">
+                        <img
+                          src={project.image}
+                          alt={`Tampilan proyek ${project.title}`}
+                          loading="lazy"
+                          className="h-full w-full object-cover object-top transition duration-500 group-hover:scale-[1.05]"
+                        />
+                        <span className="absolute left-3 top-3 rounded-full bg-white/90 px-2.5 py-1 text-[9px] font-semibold uppercase tracking-[0.12em] text-blush-700 shadow-sm backdrop-blur">
+                          {project.tag}
+                        </span>
+                      </div>
+                      <div className="p-4">
+                        <h4 className="font-serif text-lg leading-tight tracking-tight text-plum-900">
+                          {project.title}
+                        </h4>
+                        <p className="mt-1.5 text-[11px] leading-relaxed text-plum-500">
+                          {project.detail}
+                        </p>
+                        <p className="mt-2.5 text-[10px] font-semibold uppercase tracking-[0.12em] text-blush-600">
+                          {project.meta}
+                        </p>
+                      </div>
+                    </article>
+                  ))}
+                </div>
+
+                <div className="mt-4 grid gap-3 sm:grid-cols-2">
+                  {otherProjects.map((project) => (
+                    <div
+                      key={project.title}
+                      className="rounded-2xl border border-blush-200/70 bg-white/60 p-4"
+                    >
+                      <div className="flex items-center gap-2">
+                        <SparkleIcon className="h-3.5 w-3.5 text-blush-400" />
+                        <p className="text-xs font-semibold text-plum-900">{project.title}</p>
+                      </div>
+                      <p className="mt-1.5 text-[11px] leading-relaxed text-plum-500">
+                        {project.detail}
+                      </p>
+                      <p className="mt-2 text-[10px] font-medium uppercase tracking-[0.12em] text-blush-500">
+                        {project.meta}
+                      </p>
                     </div>
-                    <span className="hidden shrink-0 rounded-full bg-blush-50 px-2.5 py-1 text-[10px] font-medium text-blush-700 sm:block">
-                      {highlight.meta}
-                    </span>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
             </div>
           </div>

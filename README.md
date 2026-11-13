@@ -81,6 +81,12 @@ Konfigurasi deploy tersedia di `vercel.json` (framework Vite, output `dist`, hea
 ```
 public/
   cv/Gizelle-Mathilda-Mamentu-CV.pdf   # CV yang ditampilkan di website
+  images/
+    foto-gizelle.jpg                   # Foto profil (dipakai di hero & kartu profil)
+    project-stylesync.webp             # Screenshot proyek StyleSync
+    project-putro-agung.webp           # Screenshot Lapangan Putro Agung
+    project-rescue-watch.webp          # Screenshot RESCUE WATCH (dashboard IoT)
+    project-simlab.webp                # Screenshot SIM-LAB
   favicon.svg
 src/
   App.tsx                              # Seluruh halaman & komponen
@@ -89,6 +95,8 @@ src/
 index.html
 vercel.json
 ```
+
+Gambar di `public/images` sudah dikompres (WebP, maksimal 1400px) supaya halaman tetap ringan. Untuk mengganti foto atau screenshot proyek, cukup timpa file dengan nama yang sama lalu jalankan `npm run build`.
 
 ## Kontak
 
