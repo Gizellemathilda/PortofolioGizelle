@@ -475,10 +475,6 @@ function App() {
                     <MailIcon />
                   </SocialLink>
                 </div>
-                <span className="hidden h-6 w-px bg-blush-200 sm:block" />
-                <p className="text-xs text-plum-500">
-                  Berbasis di Surabaya, Indonesia
-                </p>
               </div>
             </div>
 
@@ -1158,8 +1154,7 @@ function App() {
                 </span>
               </a>
               <p className="mt-3 max-w-sm text-xs leading-relaxed text-plum-500">
-                Portofolio pribadi — Teknik Informatika, Universitas Negeri Surabaya. Dibangun
-                dengan React, Vite, dan Tailwind CSS.
+                Portofolio pribadi — Teknik Informatika, Universitas Negeri Surabaya.
               </p>
             </div>
 
@@ -1185,13 +1180,6 @@ function App() {
 
           <div className="mt-8 flex flex-col gap-2 border-t border-blush-100 pt-6 text-[11px] text-plum-400 sm:flex-row sm:items-center sm:justify-between">
             <p>© {CURRENT_YEAR} Gizelle Mathilda Mamentu. All rights reserved.</p>
-            <p className="flex items-center gap-1.5">
-              Dibuat dengan
-              <span className="text-blush-500" aria-hidden="true">
-                ♥
-              </span>
-              di Surabaya
-            </p>
           </div>
         </div>
       </footer>
